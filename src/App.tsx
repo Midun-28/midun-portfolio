@@ -12,13 +12,9 @@ import { Footer } from './components/layout/Footer';
 import { GoldenParticlesCanvas } from './components/cinematic/GoldenParticlesCanvas';
 
 export const App: React.FC = () => {
-  const [showIntro, setShowIntro] = useState<boolean>(() => {
-    // Check if the user already entered the portfolio in the current session
-    return !sessionStorage.getItem('midun_portfolio_entered');
-  });
+  const [showIntro, setShowIntro] = useState<boolean>(true);
 
   const handleEnterPortfolio = () => {
-    sessionStorage.setItem('midun_portfolio_entered', 'true');
     setShowIntro(false);
   };
 

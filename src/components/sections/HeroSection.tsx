@@ -27,24 +27,28 @@ export const HeroSection: React.FC = () => {
       {/* 1. AUTHENTIC CLEAN PORIKKALAM TEMPLATE BACKDROP LAYER          */}
       {/* ============================================================== */}
       <div className="absolute inset-0 pointer-events-none select-none">
-        {/* Clean Background: Temple on left, Cyberpunk City on right, open center */}
+        {/* Crystal Clear Artwork: Temple on left, Cyberpunk City on right, open center */}
         <div
           className="absolute inset-0 bg-cover bg-center transition-all duration-1000 scale-100"
           style={{
             backgroundImage: `url('/media/porikkalam_clean_bg.jpg')`,
-            filter: 'brightness(0.42) contrast(1.15) saturate(0.95)',
+            filter: 'brightness(0.92) contrast(1.08) saturate(1.05)',
           }}
         />
 
-        {/* Blueprint Grid Lines Subtle Overlay */}
-        <div className="absolute inset-0 bg-blueprint-grid opacity-20" />
+        {/* Soft Focused Center Vignette: Keeps Temple & Cyber City 100% Bright & Clear */}
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse at 50% 50%, rgba(5, 8, 17, 0.72) 0%, rgba(5, 8, 17, 0.38) 45%, rgba(5, 8, 17, 0.1) 70%, transparent 100%)'
+          }}
+        />
 
-        {/* Center Vignette & Navy Gradients for Flawless Readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-heritage-950 via-heritage-950/60 to-heritage-950/80" />
-        <div className="absolute inset-0 bg-radial-gradient from-transparent via-heritage-950/50 to-heritage-950/90" />
-
-        {/* Ambient Divine Golden Rays Beam in Center */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[750px] h-[450px] bg-gradient-to-b from-gold-400/20 via-gold-600/5 to-transparent blur-3xl pointer-events-none" />
+        {/* Ambient Top Light Beam */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[750px] h-[400px] bg-gradient-to-b from-gold-400/20 via-gold-600/5 to-transparent blur-3xl pointer-events-none" />
+        
+        {/* Subtle Edge Transitions */}
+        <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-heritage-950 to-transparent pointer-events-none" />
       </div>
 
       {/* ============================================================== */}

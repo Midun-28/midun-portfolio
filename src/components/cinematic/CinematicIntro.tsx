@@ -21,7 +21,7 @@ export const CinematicIntro: React.FC<CinematicIntroProps> = ({ onEnter }) => {
         transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
         className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-heritage-950"
       >
-        {/* Background Layer: Video or High-Res Dravidian Temple Visual */}
+        {/* Background Layer: Clear High-Resolution Dravidian Temple x Cyber City Visual */}
         <div className="absolute inset-0">
           {introMedia.videoUrl ? (
             <video
@@ -31,27 +31,32 @@ export const CinematicIntro: React.FC<CinematicIntroProps> = ({ onEnter }) => {
               loop
               playsInline
               onLoadedData={() => setVideoLoaded(true)}
-              className={`w-full h-full object-cover object-center filter brightness-50 contrast-125 transition-opacity duration-1000 ${
-                videoLoaded ? 'opacity-70' : 'opacity-0'
+              className={`w-full h-full object-cover object-center filter brightness-90 contrast-115 transition-opacity duration-1000 ${
+                videoLoaded ? 'opacity-80' : 'opacity-0'
               }`}
             />
           ) : null}
 
-          {/* High-Resolution Heritage Temple Backdrop Image */}
+          {/* Crystal Clear Heritage Temple & Cyber City Artwork */}
           <div
             className="absolute inset-0 bg-cover bg-center transition-all duration-1000"
             style={{
-              backgroundImage: `url(${introMedia.fallbackPoster})`,
-              filter: 'brightness(0.32) contrast(1.15) saturate(0.85)',
+              backgroundImage: `url('/media/porikkalam_clean_bg.jpg')`,
+              filter: 'brightness(0.95) contrast(1.08) saturate(1.05)',
             }}
           />
 
-          {/* Dark Cinematic Vignette & Royal Navy Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-heritage-950 via-heritage-900/80 to-heritage-950/90" />
-          <div className="absolute inset-0 bg-radial-gradient from-transparent via-heritage-950/60 to-heritage-950/95" />
+          {/* Soft Centered Focus Vignette - Leaves Temple on Left and Cyber City on Right 100% Crystal Clear */}
+          <div 
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: 'radial-gradient(ellipse at 50% 50%, rgba(5, 8, 17, 0.72) 0%, rgba(5, 8, 17, 0.4) 45%, rgba(5, 8, 17, 0.1) 70%, transparent 100%)'
+            }}
+          />
           
-          {/* Cybernetic Blueprint Grid Line Overlay (Digital Innovation) */}
-          <div className="absolute inset-0 bg-blueprint-grid opacity-30" />
+          {/* Subtle Top & Bottom Cinematic Edge Bars */}
+          <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-heritage-950/80 to-transparent pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-heritage-950/80 to-transparent pointer-events-none" />
         </div>
 
         {/* Floating Golden Particles & Embers */}
