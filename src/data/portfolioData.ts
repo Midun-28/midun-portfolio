@@ -39,9 +39,9 @@ export const personalInfo: PersonalInfo = {
   // Cinematic Intro Screen Media Configuration
   introMedia: {
     // Drop your intro video into public/media/intro_bg.mp4 and set: videoUrl: '/media/intro_bg.mp4'
-    videoUrl: "", // If empty string, portfolio gracefully displays high-res cinematic heritage visuals with golden particles
-    fallbackPoster: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=1920&auto=format&fit=crop", // Majestic temple gopuram
-    welcomeSubtitle: "AN ARENA FOR INNOVATION • திறன்களின் திடல்",
+    videoUrl: "", // If empty string, portfolio gracefully displays the iconic Porikkalam temple x cyber city template
+    fallbackPoster: "/media/porikkalam_hero.jpg", // Iconic Porikkalam 2026 heritage x cyber banner
+    welcomeSubtitle: "AN ARENA FOR ENGINEERS • திறன்களின் திடல்",
     welcomeTamilGreeting: "வணக்கம் • வருகை தருக",
   },
 
