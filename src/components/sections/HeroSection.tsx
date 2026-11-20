@@ -18,39 +18,39 @@ import {
 } from 'lucide-react';
 
 export const HeroSection: React.FC = () => {
-  const { name, tamilName, role, bioParagraphs, profileImage, socials, resumeUrl } = personalInfo;
+  const { name, tamilName, role, bioParagraphs, profileImage, socials, resumeUrl, location } = personalInfo;
 
   return (
-    <section id="home" className="relative min-h-screen pt-24 pb-20 flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen pt-28 pb-24 flex items-center justify-center overflow-hidden">
       
       {/* ============================================================== */}
-      {/* 1. AUTHENTIC PORIKKALAM TEMPLATE BACKDROP LAYER               */}
+      {/* 1. AUTHENTIC CLEAN PORIKKALAM TEMPLATE BACKDROP LAYER          */}
       {/* ============================================================== */}
       <div className="absolute inset-0 pointer-events-none select-none">
-        {/* Exact Porikkalam reference backdrop image (Temple on left, Cyberpunk City on right) */}
+        {/* Clean Background: Temple on left, Cyberpunk City on right, open center */}
         <div
-          className="absolute inset-0 bg-cover bg-center transition-all duration-1000 scale-105"
+          className="absolute inset-0 bg-cover bg-center transition-all duration-1000 scale-100"
           style={{
-            backgroundImage: `url('/media/porikkalam_hero.jpg')`,
-            filter: 'brightness(0.35) contrast(1.2) saturate(0.9)',
+            backgroundImage: `url('/media/porikkalam_clean_bg.jpg')`,
+            filter: 'brightness(0.42) contrast(1.15) saturate(0.95)',
           }}
         />
 
-        {/* Blueprint Grid Lines Overlay */}
-        <div className="absolute inset-0 bg-blueprint-grid opacity-25" />
+        {/* Blueprint Grid Lines Subtle Overlay */}
+        <div className="absolute inset-0 bg-blueprint-grid opacity-20" />
 
-        {/* Deep Midnight Navy & Vignette Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-t from-heritage-950 via-heritage-950/70 to-heritage-950/90" />
-        <div className="absolute inset-0 bg-radial-gradient from-transparent via-heritage-950/60 to-heritage-950/95" />
+        {/* Center Vignette & Navy Gradients for Flawless Readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-heritage-950 via-heritage-950/60 to-heritage-950/80" />
+        <div className="absolute inset-0 bg-radial-gradient from-transparent via-heritage-950/50 to-heritage-950/90" />
 
-        {/* Subtle Ambient Golden Glow Center */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gold-500/10 rounded-full blur-[140px]" />
+        {/* Ambient Divine Golden Rays Beam in Center */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[750px] h-[450px] bg-gradient-to-b from-gold-400/20 via-gold-600/5 to-transparent blur-3xl pointer-events-none" />
       </div>
 
       {/* ============================================================== */}
       {/* 2. FLOATING RIGHT-SIDE ACTION DOCK (PORIKKALAM SIGNATURE)      */}
       {/* ============================================================== */}
-      <div className="hidden xl:flex fixed right-6 top-1/2 -translate-y-1/2 z-30 flex-col gap-3 p-1.5 rounded-2xl bg-heritage-950/80 border border-gold-500/30 backdrop-blur-md shadow-[0_0_20px_rgba(212,175,55,0.15)]">
+      <div className="hidden xl:flex fixed right-6 top-1/2 -translate-y-1/2 z-30 flex-col gap-3 p-1.5 rounded-2xl bg-heritage-950/85 border border-gold-500/30 backdrop-blur-md shadow-[0_0_20px_rgba(212,175,55,0.15)]">
         <a
           href="#about"
           className="p-2.5 rounded-xl text-gold-400 hover:text-white hover:bg-gold-500/20 transition-all group relative"
@@ -83,7 +83,7 @@ export const HeroSection: React.FC = () => {
         </a>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center">
         
         {/* ============================================================== */}
         {/* 3. TOP PRESENTATION BANNER (PORIKKALAM EXACT HEADER SHAPE)     */}
@@ -92,7 +92,7 @@ export const HeroSection: React.FC = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-6 sm:mb-8"
+          className="text-center mb-5"
         >
           <p className="text-[11px] sm:text-xs font-serif tracking-[0.25em] text-slate-300 uppercase">
             TAMIL HERITAGE × DIGITAL INNOVATION
@@ -116,227 +116,202 @@ export const HeroSection: React.FC = () => {
 
 
         {/* ============================================================== */}
-        {/* 4. MAIN SPLIT CONTENT: Profile On Left | Porikkalam Text Right */}
+        {/* 4. CENTERED PROFILE IMAGE IN ORNATE GOLDEN CHARIOT WHEEL FRAME */}
         {/* ============================================================== */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-          
-          {/* ============================================================== */}
-          {/* LEFT: Portrait in Layered Temple Chariot Frame (Required)       */}
-          {/* ============================================================== */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, delay: 0.2 }}
-            className="lg:col-span-5 flex flex-col items-center justify-center relative"
-          >
-            {/* Floating Frame Container */}
-            <div className="relative animate-float">
-              
-              {/* Concentric Temple Mandala / Engineering Blueprint Rings */}
-              <div className="absolute -inset-8 rounded-full border border-gold-500/20 animate-spin-slow pointer-events-none" />
-              <div className="absolute -inset-4 rounded-full border border-dashed border-gold-400/30 pointer-events-none" />
-              
-              {/* Outer Golden Aura */}
-              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-gold-600 via-gold-400 to-amber-600 opacity-60 blur-xl" />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.2 }}
+          className="relative my-4"
+        >
+          {/* Floating Animation Wrapper */}
+          <div className="relative animate-float flex flex-col items-center">
+            
+            {/* Concentric Rotating Mandala Rings */}
+            <div className="absolute -inset-6 rounded-full border border-gold-500/25 animate-spin-slow pointer-events-none" />
+            <div className="absolute -inset-3 rounded-full border border-dashed border-gold-400/35 pointer-events-none" />
+            
+            {/* Outer Golden Aura Glow */}
+            <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-gold-600 via-gold-400 to-amber-600 opacity-60 blur-lg" />
 
-              {/* Profile Card / Portrait Container */}
-              <div className="relative w-64 h-80 sm:w-72 sm:h-96 rounded-2xl overflow-hidden bg-heritage-900 border-2 border-gold-400/90 shadow-[0_0_40px_rgba(212,175,55,0.4)]">
-                
-                {/* Profile Image with subtle golden contrast */}
-                <img
-                  src={profileImage}
-                  alt={name}
-                  className="w-full h-full object-cover object-top filter brightness-95 contrast-105 transition-transform duration-700 hover:scale-105"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop";
-                  }}
-                />
-
-                {/* Dark Vignette Bottom Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-heritage-950 via-heritage-950/25 to-transparent opacity-90" />
-
-                {/* Carved Corner Accents on the frame */}
-                <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-gold-300 pointer-events-none" />
-                <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-gold-300 pointer-events-none" />
-                <div className="absolute bottom-2 left-2 w-4 h-4 border-b-2 border-l-2 border-gold-300 pointer-events-none" />
-                <div className="absolute bottom-2 right-2 w-4 h-4 border-b-2 border-r-2 border-gold-300 pointer-events-none" />
-
-                {/* Floating Status Pill */}
-                <div className="absolute bottom-4 left-4 right-4 bg-heritage-900/90 backdrop-blur-md border border-gold-500/40 rounded-xl px-3 py-2 flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                    <span className="text-[11px] font-sans font-medium text-emerald-300 tracking-wider uppercase">
-                      Open to Innovation
-                    </span>
-                  </div>
-                  <span className="font-mono text-[10px] text-gold-400/90">TAMIL NADU</span>
-                </div>
-              </div>
-
-              {/* Floating Mini Tech Badges */}
-              <div className="absolute -top-3 -right-3 bg-heritage-900/95 border border-gold-500/70 rounded-lg p-2.5 shadow-gold-sm flex items-center gap-2 backdrop-blur-md">
-                <Code2 size={16} className="text-gold-400" />
-                <span className="text-xs font-mono text-gold-200">Full Stack</span>
-              </div>
-
-              <div className="absolute -bottom-3 -left-3 bg-heritage-900/95 border border-gold-500/70 rounded-lg p-2.5 shadow-gold-sm flex items-center gap-2 backdrop-blur-md">
-                <Cpu size={16} className="text-gold-400" />
-                <span className="text-xs font-mono text-gold-200">AI / ML</span>
-              </div>
+            {/* Profile Avatar Frame (Centered Circular/Rounded) */}
+            <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden bg-heritage-900 border-2 border-gold-400/90 shadow-[0_0_35px_rgba(212,175,55,0.4)]">
+              <img
+                src={profileImage}
+                alt={name}
+                className="w-full h-full object-cover object-top filter brightness-95 contrast-105 transition-transform duration-700 hover:scale-110"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop";
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-heritage-950/60 via-transparent to-transparent pointer-events-none" />
             </div>
 
-            {/* Social Media Link Icons with Gold Hover Effects */}
-            <div className="flex items-center gap-3.5 mt-7">
+            {/* Status Pill Attached Below Image */}
+            <div className="mt-3 bg-heritage-900/90 backdrop-blur-md border border-gold-500/40 rounded-full px-3.5 py-1 flex items-center gap-2 shadow-gold-sm">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+              <span className="text-[11px] font-sans font-medium text-emerald-300 tracking-wider uppercase">
+                Open to Opportunities
+              </span>
+              <span className="text-gold-500/40">•</span>
+              <span className="font-mono text-[10px] text-gold-300">{location}</span>
+            </div>
+
+            {/* Floating Mini Tech Badges around the frame */}
+            <div className="hidden sm:flex absolute -left-12 top-1/2 -translate-y-1/2 bg-heritage-900/95 border border-gold-500/60 rounded-xl px-2.5 py-1.5 shadow-gold-sm items-center gap-1.5 backdrop-blur-md">
+              <Code2 size={14} className="text-gold-400" />
+              <span className="text-[11px] font-mono text-gold-200">Full Stack</span>
+            </div>
+
+            <div className="hidden sm:flex absolute -right-12 top-1/2 -translate-y-1/2 bg-heritage-900/95 border border-gold-500/60 rounded-xl px-2.5 py-1.5 shadow-gold-sm items-center gap-1.5 backdrop-blur-md">
+              <Cpu size={14} className="text-gold-400" />
+              <span className="text-[11px] font-mono text-gold-200">AI / ML</span>
+            </div>
+          </div>
+        </motion.div>
+
+
+        {/* ============================================================== */}
+        {/* 5. 3D GOLD EMBOSSED BRANDING (EXACT PORIKKALAM STYLE)          */}
+        {/* ============================================================== */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.35 }}
+          className="flex flex-col items-center mt-2 max-w-3xl"
+        >
+          {/* Greeting */}
+          <div className="flex items-center gap-2 mb-1">
+            <span className="font-serif text-[11px] sm:text-xs font-bold tracking-[0.25em] text-gold-400 uppercase">
+              HELLO, I'M
+            </span>
+            <span className="text-gold-500/50">•</span>
+            <span className="font-tamil text-xs text-gold-antique tracking-wider">
+              வணக்கம், நான்
+            </span>
+          </div>
+
+          {/* 3D Gold Main Name */}
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-black tracking-tight uppercase text-gold-3d leading-none my-1">
+            {name}
+          </h1>
+
+          {/* Iconic Porikkalam 3D Gold Tamil Lettering */}
+          <div className="flex items-center justify-center gap-3 my-1">
+            <span className="font-tamil text-3xl sm:text-4xl md:text-5xl text-gold-3d font-bold tracking-wider">
+              {tamilName}
+            </span>
+            <span className="text-gold-500/60 font-serif text-xl">•</span>
+            <span className="font-tamil text-lg sm:text-2xl text-gold-antique font-semibold">
+              பொறியியலாளர்
+            </span>
+          </div>
+
+          {/* Sub-heading in Porikkalam Serifs */}
+          <div className="my-1">
+            <h2 className="text-lg sm:text-2xl font-serif font-bold tracking-[0.16em] text-gold-200 uppercase">
+              AN ARENA FOR ENGINEERS
+            </h2>
+            <p className="font-tamil text-sm sm:text-base text-gold-antique/90 font-medium tracking-wide">
+              திறன்களின் திடல்
+            </p>
+          </div>
+
+          {/* Role & Tagline Badge */}
+          <p className="font-mono text-xs sm:text-sm text-gold-300 tracking-widest uppercase my-2 flex items-center justify-center gap-2">
+            <Terminal size={14} className="text-gold-400" />
+            <span>{role}</span>
+          </p>
+
+          {/* Feature Pills: + ENGINEERING | INNOVATION | ENTREPRENEURSHIP + Style */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-900/35 border border-gold-500/35 text-gold-300 font-serif text-[11px] sm:text-xs tracking-widest uppercase my-3 backdrop-blur-sm">
+            <span className="text-gold-500 font-bold">✦</span>
+            <span>FULL STACK</span>
+            <span className="text-gold-500/40">|</span>
+            <span>AI INNOVATION</span>
+            <span className="text-gold-500/40">|</span>
+            <span>PROBLEM SOLVING</span>
+            <span className="text-gold-500 font-bold">✦</span>
+          </div>
+
+          {/* Professional Introduction Summary */}
+          <p className="text-slate-300 font-sans text-sm sm:text-base leading-relaxed font-light mb-6 max-w-xl text-center">
+            {bioParagraphs[0]}
+          </p>
+
+          {/* ============================================================== */}
+          {/* 6. CENTERED ACTION & CONTACT INFORMATION                       */}
+          {/* ============================================================== */}
+          <div className="flex flex-wrap items-center justify-center gap-4 w-full mb-6">
+            <a
+              href="#projects"
+              className="px-7 py-3.5 rounded-full bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 text-heritage-950 font-serif font-bold text-xs sm:text-sm tracking-[0.18em] uppercase hover:shadow-[0_0_25px_rgba(212,175,55,0.7)] hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-2 group"
+            >
+              <span>EXPLORE PROJECTS</span>
+              <ArrowUpRight size={17} className="transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
+
+            <a
+              href={resumeUrl}
+              download
+              className="px-7 py-3.5 rounded-full bg-heritage-900/90 border border-gold-400/60 text-gold-200 font-serif font-semibold text-xs sm:text-sm tracking-[0.18em] uppercase hover:bg-gold-500/15 hover:border-gold-300 hover:shadow-gold-sm active:scale-95 transition-all flex items-center gap-2 backdrop-blur-sm"
+            >
+              <FileDown size={17} className="text-gold-400" />
+              <span>DOWNLOAD RESUME</span>
+            </a>
+
+            <a
+              href="#contact"
+              className="px-6 py-3.5 rounded-full bg-heritage-950/80 border border-gold-500/40 text-gold-300 font-serif text-xs sm:text-sm tracking-[0.18em] uppercase hover:border-gold-400 hover:text-white transition-all flex items-center gap-2"
+            >
+              <Mail size={16} />
+              <span>CONTACT ME</span>
+            </a>
+          </div>
+
+          {/* Centered Social Media Link Icons */}
+          <div className="flex items-center justify-center gap-3 mt-1">
+            <a
+              href={socials.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-heritage-900/90 border border-gold-500/40 flex items-center justify-center text-slate-300 hover:text-gold-300 hover:border-gold-300 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all transform hover:-translate-y-1"
+              aria-label="GitHub Profile"
+            >
+              <Github size={18} />
+            </a>
+            <a
+              href={socials.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-heritage-900/90 border border-gold-500/40 flex items-center justify-center text-slate-300 hover:text-gold-300 hover:border-gold-300 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all transform hover:-translate-y-1"
+              aria-label="LinkedIn Profile"
+            >
+              <Linkedin size={18} />
+            </a>
+            <a
+              href={socials.email}
+              className="w-10 h-10 rounded-full bg-heritage-900/90 border border-gold-500/40 flex items-center justify-center text-slate-300 hover:text-gold-300 hover:border-gold-300 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all transform hover:-translate-y-1"
+              aria-label="Email Me"
+            >
+              <Mail size={18} />
+            </a>
+            {socials.twitter && (
               <a
-                href={socials.github}
+                href={socials.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-heritage-900/90 border border-gold-500/40 flex items-center justify-center text-slate-300 hover:text-gold-300 hover:border-gold-300 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all transform hover:-translate-y-1"
-                aria-label="GitHub Profile"
+                aria-label="Twitter Profile"
               >
-                <Github size={18} />
+                <Twitter size={18} />
               </a>
-              <a
-                href={socials.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-heritage-900/90 border border-gold-500/40 flex items-center justify-center text-slate-300 hover:text-gold-300 hover:border-gold-300 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all transform hover:-translate-y-1"
-                aria-label="LinkedIn Profile"
-              >
-                <Linkedin size={18} />
-              </a>
-              <a
-                href={socials.email}
-                className="w-10 h-10 rounded-full bg-heritage-900/90 border border-gold-500/40 flex items-center justify-center text-slate-300 hover:text-gold-300 hover:border-gold-300 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all transform hover:-translate-y-1"
-                aria-label="Email Me"
-              >
-                <Mail size={18} />
-              </a>
-              {socials.twitter && (
-                <a
-                  href={socials.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-heritage-900/90 border border-gold-500/40 flex items-center justify-center text-slate-300 hover:text-gold-300 hover:border-gold-300 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all transform hover:-translate-y-1"
-                  aria-label="Twitter Profile"
-                >
-                  <Twitter size={18} />
-                </a>
-              )}
-            </div>
-          </motion.div>
-
-
-          {/* ============================================================== */}
-          {/* RIGHT: Porikkalam 3D Gold Branding, Emblem & Call-To-Actions  */}
-          {/* ============================================================== */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, delay: 0.3 }}
-            className="lg:col-span-7 flex flex-col items-start text-left"
-          >
-            {/* Architectural Clock Tower / Kalasam Blueprint Emblem */}
-            <div className="relative mb-3 flex items-center gap-3">
-              <div className="w-12 h-14 relative flex items-center justify-center">
-                {/* Concentric Blueprint Compass Circle */}
-                <svg className="w-full h-full drop-shadow-[0_0_12px_rgba(212,175,55,0.6)]" viewBox="0 0 48 56" fill="none">
-                  <circle cx="24" cy="28" r="22" stroke="rgba(212,175,55,0.4)" strokeWidth="1" strokeDasharray="2 2" />
-                  <circle cx="24" cy="28" r="16" stroke="rgba(212,175,55,0.6)" strokeWidth="0.8" />
-                  {/* Temple Finial / Clock Tower motif */}
-                  <rect x="18" y="14" width="12" height="26" rx="2" fill="#D4AF37" stroke="#FDE68A" strokeWidth="1" />
-                  <circle cx="24" cy="24" r="3.5" fill="#070B14" stroke="#FFF" strokeWidth="0.8" />
-                  <path d="M16 40H32L34 46H14L16 40Z" fill="#8C6D23" />
-                  <path d="M24 6L28 14H20L24 6Z" fill="#FDE68A" />
-                </svg>
-              </div>
-
-              <div className="flex flex-col">
-                <span className="font-serif text-[11px] font-bold tracking-[0.25em] text-gold-400 uppercase">
-                  HELLO, I'M
-                </span>
-                <span className="font-tamil text-xs text-gold-antique tracking-wider">
-                  வணக்கம், நான்
-                </span>
-              </div>
-            </div>
-
-            {/* 3D Gold Embossed Title: MIDUN D & தமிழ் முத்திரை */}
-            <div className="mb-2 w-full">
-              <h1 className="text-5xl sm:text-6xl md:text-7xl font-serif font-black tracking-tight uppercase text-gold-3d leading-none">
-                {name}
-              </h1>
-
-              {/* Iconic Porikkalam Tamil Calligraphy */}
-              <div className="flex items-center gap-3 mt-1.5">
-                <span className="font-tamil text-3xl sm:text-4xl text-gold-3d font-bold tracking-wider">
-                  {tamilName}
-                </span>
-                <span className="text-gold-500/60 font-serif">•</span>
-                <span className="font-tamil text-lg sm:text-xl text-gold-antique/80">
-                  பொறியியலாளர்
-                </span>
-              </div>
-            </div>
-
-            {/* Sub-heading in Porikkalam Serifs */}
-            <div className="mt-2 mb-1">
-              <h2 className="text-lg sm:text-xl md:text-2xl font-serif font-bold tracking-[0.14em] text-gold-200 uppercase">
-                AN ARENA FOR ENGINEERS
-              </h2>
-              <p className="font-tamil text-base sm:text-lg text-gold-antique font-medium tracking-wide">
-                திறன்களின் திடல்
-              </p>
-            </div>
-
-            {/* Role & Tagline Badge */}
-            <p className="font-mono text-xs sm:text-sm text-gold-300/90 tracking-widest uppercase my-2 flex items-center gap-2">
-              <Terminal size={14} className="text-gold-400" />
-              <span>{role}</span>
-            </p>
-
-            {/* Feature Pills: + ENGINEERING | INNOVATION | ENTREPRENEURSHIP + Style */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-900/30 border border-gold-500/30 text-gold-300 font-serif text-[11px] sm:text-xs tracking-widest uppercase my-3 backdrop-blur-sm">
-              <span className="text-gold-500 font-bold">✦</span>
-              <span>FULL STACK</span>
-              <span className="text-gold-500/40">|</span>
-              <span>AI INNOVATION</span>
-              <span className="text-gold-500/40">|</span>
-              <span>PROBLEM SOLVING</span>
-              <span className="text-gold-500 font-bold">✦</span>
-            </div>
-
-            {/* Professional Summary */}
-            <p className="text-slate-300 font-sans text-sm sm:text-base leading-relaxed font-light mb-8 max-w-xl">
-              {bioParagraphs[0]}
-            </p>
-
-            {/* Action Buttons: Explore Projects & Resume */}
-            <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto">
-              <a
-                href="#projects"
-                className="relative px-7 py-3.5 rounded-full bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 text-heritage-950 font-serif font-bold text-xs sm:text-sm tracking-[0.18em] uppercase hover:shadow-[0_0_25px_rgba(212,175,55,0.7)] hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-2.5 group"
-              >
-                <span>EXPLORE PROJECTS</span>
-                <ArrowUpRight size={17} className="transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </a>
-
-              <a
-                href={resumeUrl}
-                download
-                className="relative px-7 py-3.5 rounded-full bg-heritage-900/90 border border-gold-400/60 text-gold-200 font-serif font-semibold text-xs sm:text-sm tracking-[0.18em] uppercase hover:bg-gold-500/15 hover:border-gold-300 hover:shadow-gold-sm active:scale-95 transition-all flex items-center gap-2.5 backdrop-blur-sm"
-              >
-                <FileDown size={17} className="text-gold-400" />
-                <span>DOWNLOAD RESUME</span>
-              </a>
-            </div>
-
-          </motion.div>
-
-        </div>
+            )}
+          </div>
+        </motion.div>
 
         {/* Bottom Ornamental Symmetrical Divider */}
-        <div className="mt-14 max-w-xl mx-auto">
+        <div className="mt-12 max-w-md mx-auto">
           <TempleArchOrnament />
         </div>
 

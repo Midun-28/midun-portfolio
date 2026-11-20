@@ -59,11 +59,11 @@ export const personalInfo: PersonalInfo = {
     ],
     // Drop your native village or cultural drone video into public/media/my_roots_bg.mp4
     videoUrl: "", // If empty string, beautiful ambient Dravidian heritage canvas is rendered
-    fallbackImage: "https://images.unsplash.com/photo-1600100397608-f010f443b794?q=80&w=1920&auto=format&fit=crop",
+    fallbackImage: "/media/porikkalam_hero.jpg",
     galleryImages: [
-      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1600100397608-f010f443b794?q=80&w=800&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800&auto=format&fit=crop"
+      "/media/porikkalam_hero.jpg",
+      "/media/porikkalam_flagship.jpg",
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=800&auto=format&fit=crop"
     ]
   },
 
