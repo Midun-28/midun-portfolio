@@ -19,8 +19,8 @@ export const personalInfo: PersonalInfo = {
   role: "Full Stack Developer | AI Enthusiast",
   tagline: "Bridging timeless Tamil heritage and modern digital intelligence to craft resilient software.",
   
-  // Midun's real portrait photo uploaded by user
-  profileImage: "/media/midun_profile.jpg",
+  // Midun's transparent cutout portrait photo
+  profileImage: "/media/midun_cutout.png",
   
   // Replace with your real resume file path in public/ (e.g., '/media/Midun_D_Resume.pdf')
   resumeUrl: "#contact",

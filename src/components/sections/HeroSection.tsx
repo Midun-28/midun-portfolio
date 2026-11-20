@@ -10,18 +10,16 @@ import {
   FileDown, 
   ArrowUpRight, 
   Terminal, 
-  Cpu, 
-  Code2, 
   User, 
   BookmarkCheck,
   Compass
 } from 'lucide-react';
 
 export const HeroSection: React.FC = () => {
-  const { name, role, profileImage, socials, resumeUrl, location } = personalInfo;
+  const { name, role, profileImage, socials, resumeUrl } = personalInfo;
 
   return (
-    <section id="home" className="relative min-h-screen pt-28 pb-24 flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen pt-24 pb-20 flex items-center justify-center overflow-hidden">
       
       {/* ============================================================== */}
       {/* 1. AUTHENTIC CLEAN PORIKKALAM TEMPLATE BACKDROP LAYER          */}
@@ -47,7 +45,7 @@ export const HeroSection: React.FC = () => {
         {/* Ambient Top Light Beam */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[750px] h-[400px] bg-gradient-to-b from-gold-400/20 via-gold-600/5 to-transparent blur-3xl pointer-events-none" />
         
-        {/* Subtle Edge Transitions */}
+        {/* Subtle Edge Transition */}
         <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-heritage-950 to-transparent pointer-events-none" />
       </div>
 
@@ -90,110 +88,46 @@ export const HeroSection: React.FC = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center">
         
         {/* ============================================================== */}
-        {/* 3. TOP PRESENTATION BANNER (PORIKKALAM EXACT HEADER SHAPE)     */}
+        {/* 3. MIDUN D - CLEAN TRANSPARENT CUTOUT PORTRAIT (NO CIRCLE/RINGS) */}
         {/* ============================================================== */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-5"
+          initial={{ opacity: 0, scale: 0.9, y: 25 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="relative my-2 sm:my-4 flex justify-center"
         >
-          <p className="text-[11px] sm:text-xs font-serif tracking-[0.25em] text-slate-300 uppercase">
-            TAMIL HERITAGE × DIGITAL INNOVATION
-          </p>
-          <p className="text-[10px] sm:text-[11px] font-serif tracking-[0.2em] text-gold-antique/80 uppercase my-0.5">
-            AND
-          </p>
-          <p className="text-[11px] sm:text-xs font-serif tracking-[0.25em] text-slate-300 uppercase">
-            FULL STACK ENGINEERING DISCIPLINE
-          </p>
+          {/* Subtle Golden Ambient Backlight behind Midun */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-96 sm:h-96 bg-gold-500/15 rounded-full blur-3xl pointer-events-none" />
 
-          {/* Symmetrical — PRESENTS — Divider */}
-          <div className="flex items-center justify-center gap-3 my-2 opacity-90 max-w-xs mx-auto">
-            <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-gold-500/40 to-gold-400"></div>
-            <span className="font-serif text-[10px] sm:text-xs tracking-[0.3em] text-gold-300 uppercase font-semibold">
-              PRESENTS
-            </span>
-            <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-gold-500/40 to-gold-400"></div>
+          {/* Clean Cutout Image Standing Naturally */}
+          <div className="relative">
+            <img
+              src={profileImage}
+              alt={name}
+              className="h-72 sm:h-88 md:h-[380px] lg:h-[420px] w-auto object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.85)] filter contrast-105 brightness-100 transition-transform duration-700 hover:scale-[1.02]"
+            />
           </div>
         </motion.div>
 
 
         {/* ============================================================== */}
-        {/* 4. CENTERED PROFILE IMAGE IN ORNATE GOLDEN CHARIOT WHEEL FRAME */}
-        {/* ============================================================== */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, delay: 0.2 }}
-          className="relative my-4"
-        >
-          {/* Floating Animation Wrapper */}
-          <div className="relative animate-float flex flex-col items-center">
-            
-            {/* Concentric Rotating Mandala Rings */}
-            <div className="absolute -inset-6 rounded-full border border-gold-500/25 animate-spin-slow pointer-events-none" />
-            <div className="absolute -inset-3 rounded-full border border-dashed border-gold-400/35 pointer-events-none" />
-            
-            {/* Outer Golden Aura Glow */}
-            <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-gold-600 via-gold-400 to-amber-600 opacity-60 blur-lg" />
-
-            {/* Profile Avatar Frame (Centered Circular/Rounded) */}
-            <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden bg-heritage-900 border-2 border-gold-400/90 shadow-[0_0_40px_rgba(212,175,55,0.45)]">
-              <img
-                src={profileImage}
-                alt={name}
-                className="w-full h-full object-cover object-top filter brightness-105 contrast-105 transition-transform duration-700 hover:scale-105"
-              />
-              <div className="absolute inset-0 rounded-full shadow-[inset_0_0_20px_rgba(5,8,17,0.7)] pointer-events-none" />
-            </div>
-
-            {/* Status Pill Attached Below Image */}
-            <div className="mt-3 bg-heritage-900/90 backdrop-blur-md border border-gold-500/40 rounded-full px-3.5 py-1 flex items-center gap-2 shadow-gold-sm">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-              <span className="text-[11px] font-sans font-medium text-emerald-300 tracking-wider uppercase">
-                Open to Opportunities
-              </span>
-              <span className="text-gold-500/40">•</span>
-              <span className="font-mono text-[10px] text-gold-300">{location}</span>
-            </div>
-
-            {/* Floating Mini Tech Badges around the frame */}
-            <div className="hidden sm:flex absolute -left-12 top-1/2 -translate-y-1/2 bg-heritage-900/95 border border-gold-500/60 rounded-xl px-2.5 py-1.5 shadow-gold-sm items-center gap-1.5 backdrop-blur-md">
-              <Code2 size={14} className="text-gold-400" />
-              <span className="text-[11px] font-mono text-gold-200">Full Stack</span>
-            </div>
-
-            <div className="hidden sm:flex absolute -right-12 top-1/2 -translate-y-1/2 bg-heritage-900/95 border border-gold-500/60 rounded-xl px-2.5 py-1.5 shadow-gold-sm items-center gap-1.5 backdrop-blur-md">
-              <Cpu size={14} className="text-gold-400" />
-              <span className="text-[11px] font-mono text-gold-200">AI / ML</span>
-            </div>
-          </div>
-        </motion.div>
-
-
-        {/* ============================================================== */}
-        {/* 5. 3D GOLD EMBOSSED BRANDING (EXACT PORIKKALAM STYLE)          */}
+        {/* 4. NAME, TITLE, ACTION BUTTONS & SOCIALS                       */}
         {/* ============================================================== */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.35 }}
-          className="flex flex-col items-center mt-2 max-w-3xl"
+          transition={{ duration: 0.9, delay: 0.3 }}
+          className="flex flex-col items-center max-w-3xl -mt-1 sm:-mt-2"
         >
           {/* Greeting */}
           <div className="flex items-center gap-2 mb-1">
-            <span className="font-serif text-[11px] sm:text-xs font-bold tracking-[0.25em] text-gold-400 uppercase">
+            <span className="font-serif text-xs font-bold tracking-[0.25em] text-gold-400 uppercase">
               HELLO, I'M
-            </span>
-            <span className="text-gold-500/50">•</span>
-            <span className="font-tamil text-xs text-gold-antique tracking-wider">
-              வணக்கம், நான்
             </span>
           </div>
 
           {/* 3D Gold Main Name */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-black tracking-tight uppercase text-gold-3d leading-none my-2">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-black tracking-tight uppercase text-gold-3d leading-none my-1">
             {name}
           </h1>
 
@@ -215,9 +149,9 @@ export const HeroSection: React.FC = () => {
           </div>
 
           {/* ============================================================== */}
-          {/* 6. CENTERED ACTION & CONTACT INFORMATION                       */}
+          {/* 5. CENTERED ACTION & CONTACT INFORMATION                       */}
           {/* ============================================================== */}
-          <div className="flex flex-wrap items-center justify-center gap-4 w-full mb-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 w-full mb-6 mt-2">
             <a
               href="#projects"
               className="px-7 py-3.5 rounded-full bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 text-heritage-950 font-serif font-bold text-xs sm:text-sm tracking-[0.18em] uppercase hover:shadow-[0_0_25px_rgba(212,175,55,0.7)] hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-2 group"
