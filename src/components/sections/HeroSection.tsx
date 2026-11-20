@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 
 export const HeroSection: React.FC = () => {
-  const { name, tamilName, role, bioParagraphs, profileImage, socials, resumeUrl, location } = personalInfo;
+  const { name, role, profileImage, socials, resumeUrl, location } = personalInfo;
 
   return (
     <section id="home" className="relative min-h-screen pt-28 pb-24 flex items-center justify-center overflow-hidden">
@@ -139,16 +139,13 @@ export const HeroSection: React.FC = () => {
             <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-gold-600 via-gold-400 to-amber-600 opacity-60 blur-lg" />
 
             {/* Profile Avatar Frame (Centered Circular/Rounded) */}
-            <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden bg-heritage-900 border-2 border-gold-400/90 shadow-[0_0_35px_rgba(212,175,55,0.4)]">
+            <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden bg-heritage-900 border-2 border-gold-400/90 shadow-[0_0_40px_rgba(212,175,55,0.45)]">
               <img
                 src={profileImage}
                 alt={name}
-                className="w-full h-full object-cover object-top filter brightness-95 contrast-105 transition-transform duration-700 hover:scale-110"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop";
-                }}
+                className="w-full h-full object-cover object-top filter brightness-105 contrast-105 transition-transform duration-700 hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-heritage-950/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 rounded-full shadow-[inset_0_0_20px_rgba(5,8,17,0.7)] pointer-events-none" />
             </div>
 
             {/* Status Pill Attached Below Image */}
@@ -196,30 +193,9 @@ export const HeroSection: React.FC = () => {
           </div>
 
           {/* 3D Gold Main Name */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-black tracking-tight uppercase text-gold-3d leading-none my-1">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-black tracking-tight uppercase text-gold-3d leading-none my-2">
             {name}
           </h1>
-
-          {/* Iconic Porikkalam 3D Gold Tamil Lettering */}
-          <div className="flex items-center justify-center gap-3 my-1">
-            <span className="font-tamil text-3xl sm:text-4xl md:text-5xl text-gold-3d font-bold tracking-wider">
-              {tamilName}
-            </span>
-            <span className="text-gold-500/60 font-serif text-xl">•</span>
-            <span className="font-tamil text-lg sm:text-2xl text-gold-antique font-semibold">
-              பொறியியலாளர்
-            </span>
-          </div>
-
-          {/* Sub-heading in Porikkalam Serifs */}
-          <div className="my-1">
-            <h2 className="text-lg sm:text-2xl font-serif font-bold tracking-[0.16em] text-gold-200 uppercase">
-              AN ARENA FOR ENGINEERS
-            </h2>
-            <p className="font-tamil text-sm sm:text-base text-gold-antique/90 font-medium tracking-wide">
-              திறன்களின் திடல்
-            </p>
-          </div>
 
           {/* Role & Tagline Badge */}
           <p className="font-mono text-xs sm:text-sm text-gold-300 tracking-widest uppercase my-2 flex items-center justify-center gap-2">
@@ -237,11 +213,6 @@ export const HeroSection: React.FC = () => {
             <span>PROBLEM SOLVING</span>
             <span className="text-gold-500 font-bold">✦</span>
           </div>
-
-          {/* Professional Introduction Summary */}
-          <p className="text-slate-300 font-sans text-sm sm:text-base leading-relaxed font-light mb-6 max-w-xl text-center">
-            {bioParagraphs[0]}
-          </p>
 
           {/* ============================================================== */}
           {/* 6. CENTERED ACTION & CONTACT INFORMATION                       */}

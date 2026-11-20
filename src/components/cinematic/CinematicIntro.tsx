@@ -11,7 +11,7 @@ interface CinematicIntroProps {
 
 export const CinematicIntro: React.FC<CinematicIntroProps> = ({ onEnter }) => {
   const [videoLoaded, setVideoLoaded] = useState(false);
-  const { introMedia, name, tamilName } = personalInfo;
+  const { introMedia, name } = personalInfo;
 
   return (
     <AnimatePresence>
@@ -134,26 +134,6 @@ export const CinematicIntro: React.FC<CinematicIntroProps> = ({ onEnter }) => {
             <h1 className="text-5xl sm:text-7xl md:text-8xl font-serif font-black tracking-wider uppercase text-gold-3d leading-none">
               {name}
             </h1>
-            {tamilName && (
-              <p className="font-tamil text-2xl sm:text-4xl text-gold-3d mt-2 tracking-widest font-bold">
-                {tamilName}
-              </p>
-            )}
-          </motion.div>
-
-          {/* Arena Subtitle in Porikkalam Serifs */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="my-1"
-          >
-            <h2 className="text-base sm:text-xl font-serif font-bold tracking-[0.2em] text-gold-200 uppercase">
-              AN ARENA FOR ENGINEERS
-            </h2>
-            <p className="font-tamil text-sm sm:text-base text-gold-antique font-medium tracking-wide">
-              திறன்களின் திடல்
-            </p>
           </motion.div>
 
           {/* Traditional Symmetrical Divider */}

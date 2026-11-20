@@ -19,9 +19,8 @@ export const personalInfo: PersonalInfo = {
   role: "Full Stack Developer | AI Enthusiast",
   tagline: "Bridging timeless Tamil heritage and modern digital intelligence to craft resilient software.",
   
-  // High-resolution portrait placeholder with antique gold temple vibe
-  // Replace with '/media/profile.jpg' when you drop your picture in public/media/
-  profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop",
+  // Midun's real portrait photo uploaded by user
+  profileImage: "/media/midun_profile.jpg",
   
   // Replace with your real resume file path in public/ (e.g., '/media/Midun_D_Resume.pdf')
   resumeUrl: "#contact",
