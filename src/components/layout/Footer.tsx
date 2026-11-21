@@ -1,7 +1,7 @@
 import React from 'react';
 import { personalInfo, navLinks } from '../../data/portfolioData';
 import { TempleArchOrnament } from '../cinematic/TempleArchOrnament';
-import { ArrowUp, Sparkles } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -48,27 +48,16 @@ export const Footer: React.FC = () => {
         {/* Traditional Heritage Symmetrical Divider */}
         <TempleArchOrnament className="my-8 max-w-md mx-auto" />
 
-        {/* Bottom Attribution & Back To Top */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-gold-500/10 text-xs font-mono text-slate-500">
-          <p>
-            © {new Date().getFullYear()} Midun D. Inspired by Porikkalam & Tamil Dravidian Heritage.
-          </p>
-
-          <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5 text-gold-antique/70">
-              <Sparkles size={13} className="text-gold-400" />
-              <span>Built with Craft & Code</span>
-            </span>
-
-            {/* Back to top button */}
-            <button
-              onClick={scrollToTop}
-              className="p-2 rounded-full bg-heritage-900 border border-gold-500/30 text-gold-400 hover:text-gold-200 hover:border-gold-400 transition-all"
-              title="Return to sanctum top"
-            >
-              <ArrowUp size={15} />
-            </button>
-          </div>
+        {/* Back To Top Button */}
+        <div className="flex items-center justify-center pt-4">
+          <button
+            onClick={scrollToTop}
+            className="p-2.5 rounded-full bg-heritage-900 border border-gold-500/30 text-gold-400 hover:text-gold-200 hover:border-gold-400 transition-all shadow-md shadow-black/50"
+            title="Return to sanctum top"
+            aria-label="Return to top"
+          >
+            <ArrowUp size={16} />
+          </button>
         </div>
 
       </div>
