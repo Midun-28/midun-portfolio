@@ -11,11 +11,12 @@ import {
   FileDown, 
   MapPin, 
   CheckCircle2, 
-  MessageSquare 
+  MessageSquare,
+  Phone
 } from 'lucide-react';
 
 export const ContactSection: React.FC = () => {
-  const { email, location, socials, resumeUrl } = personalInfo;
+  const { email, location, phone, socials, resumeUrl } = personalInfo;
 
   const [formData, setFormData] = useState({
     name: '',
@@ -26,20 +27,48 @@ export const ContactSection: React.FC = () => {
 
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
 
-    setTimeout(() => {
-      setStatus('success');
-      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-        formData.subject || 'Portfolio Inquiry from ' + formData.name
+    try {
+      // Direct dispatch to Midun's personal inbox (mmidun866@gmail.com) via FormSubmit AJAX API
+      const response = await fetch(`https://formsubmit.co/ajax/${email}`, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          _subject: formData.subject || `New Portfolio Direct Message from ${formData.name}`,
+          message: formData.message,
+          _replyto: formData.email,
+          _template: 'table'
+        })
+      });
+
+      if (response.ok) {
+        setStatus('success');
+      } else {
+        // Fallback to direct mailto protocol if API is unreachable
+        window.location.href = `mailto:${email}?subject=${encodeURIComponent(
+          formData.subject || 'Portfolio Direct Message from ' + formData.name
+        )}&body=${encodeURIComponent(
+          `Sender: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        )}`;
+        setStatus('success');
+      }
+    } catch {
+      // Network fallback
+      window.location.href = `mailto:${email}?subject=${encodeURIComponent(
+        formData.subject || 'Portfolio Direct Message from ' + formData.name
       )}&body=${encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        `Sender: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
       )}`;
-      
-      window.location.href = mailtoLink;
-    }, 800);
+      setStatus('success');
+    }
   };
 
   return (
@@ -73,10 +102,16 @@ export const ContactSection: React.FC = () => {
             <div className="p-3 rounded-full bg-gold-900/40 border border-gold-500/40 text-gold-400 mb-3 group-hover:scale-110 transition-transform">
               <Mail size={20} />
             </div>
-            <span className="text-[11px] font-mono uppercase tracking-wider text-gold-antique">Official Email</span>
+            <span className="text-[11px] font-mono uppercase tracking-wider text-gold-antique">Personal Email</span>
             <span className="text-xs sm:text-sm font-sans font-medium text-slate-200 group-hover:text-gold-200 transition-colors mt-1 break-all">
               {email}
             </span>
+            {phone && (
+              <span className="text-[11px] font-mono text-slate-400 mt-1 flex items-center gap-1">
+                <Phone size={11} className="text-gold-400" />
+                <span>{phone}</span>
+              </span>
+            )}
           </a>
 
           {/* Location Card (Centered) */}
@@ -88,20 +123,28 @@ export const ContactSection: React.FC = () => {
             <span className="text-xs sm:text-sm font-sans font-medium text-slate-200 mt-1">
               {location}
             </span>
+            <span className="text-[11px] font-mono text-gold-400/80 mt-1">
+              Dr. N.G.P. iTech
+            </span>
           </div>
 
-          {/* Resume Download Card (Centered) */}
+          {/* Resume Card (Centered: Download Resume -> Resume) */}
           <a
             href={resumeUrl}
-            download
+            target="_blank"
+            rel="noopener noreferrer"
+            download="Midun_D_Resume.pdf"
             className="flex flex-col items-center text-center p-5 rounded-xl bg-gold-950/40 border border-gold-400/50 hover:bg-gold-500/20 hover:border-gold-300 transition-all group shadow-sm"
           >
             <div className="p-3 rounded-full bg-gold-500/20 border border-gold-400 text-gold-300 mb-3 group-hover:scale-110 transition-transform">
               <FileDown size={20} />
             </div>
-            <span className="text-[11px] font-mono uppercase tracking-wider text-gold-antique">Curriculum Vitae</span>
-            <span className="text-xs sm:text-sm font-serif font-bold text-gold-200 uppercase tracking-wider mt-1">
-              Download PDF
+            <span className="text-[11px] font-mono uppercase tracking-wider text-gold-antique">Official Curriculum Vitae</span>
+            <span className="text-sm font-serif font-bold text-gold-200 uppercase tracking-wider mt-1">
+              Resume
+            </span>
+            <span className="text-[11px] font-mono text-slate-400 mt-0.5">
+              View & Download PDF
             </span>
           </a>
 
@@ -114,7 +157,8 @@ export const ContactSection: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-full bg-heritage-950 border border-gold-500/40 text-slate-300 hover:text-gold-300 hover:border-gold-300 hover:shadow-gold-sm transition-all"
-            aria-label="GitHub"
+            aria-label="GitHub Profile"
+            title="GitHub (Midun-28)"
           >
             <Github size={18} />
           </a>
@@ -123,7 +167,8 @@ export const ContactSection: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-full bg-heritage-950 border border-gold-500/40 text-slate-300 hover:text-gold-300 hover:border-gold-300 hover:shadow-gold-sm transition-all"
-            aria-label="LinkedIn"
+            aria-label="LinkedIn Profile"
+            title="LinkedIn (midund)"
           >
             <Linkedin size={18} />
           </a>
@@ -131,6 +176,7 @@ export const ContactSection: React.FC = () => {
             href={`mailto:${email}`}
             className="p-3 rounded-full bg-heritage-950 border border-gold-500/40 text-slate-300 hover:text-gold-300 hover:border-gold-300 hover:shadow-gold-sm transition-all"
             aria-label="Email Direct"
+            title={`Email (${email})`}
           >
             <Mail size={18} />
           </a>
@@ -140,7 +186,7 @@ export const ContactSection: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-heritage-950 border border-gold-500/40 text-slate-300 hover:text-gold-300 hover:border-gold-300 hover:shadow-gold-sm transition-all"
-              aria-label="Twitter"
+              aria-label="Twitter Profile"
             >
               <Twitter size={18} />
             </a>
@@ -148,7 +194,7 @@ export const ContactSection: React.FC = () => {
         </div>
 
         {/* ============================================================== */}
-        {/* CENTERED INTERACTIVE CONTACT FORM                              */}
+        {/* CENTERED INTERACTIVE CONTACT FORM -> DIRECT TO PERSONAL EMAIL   */}
         {/* ============================================================== */}
         <div className="w-full">
           <HeritageCard className="p-7 sm:p-10">
@@ -158,7 +204,7 @@ export const ContactSection: React.FC = () => {
                 <span>SEND DIRECT MESSAGE</span>
               </h3>
               <p className="text-xs sm:text-sm text-slate-400 font-light">
-                Leave a message below to initiate an inquiry or discussion.
+                Messages sent here are delivered directly to Midun's personal inbox (<span className="text-gold-300">{email}</span>).
               </p>
             </div>
 
@@ -166,10 +212,13 @@ export const ContactSection: React.FC = () => {
               <div className="p-8 text-center rounded-xl bg-heritage-950/90 border border-emerald-500/40">
                 <CheckCircle2 size={36} className="text-emerald-400 mx-auto mb-3" />
                 <h4 className="font-serif text-lg font-bold text-slate-100 mb-1">
-                  Thank You for Reaching Out!
+                  Message Dispatched to Midun's Personal Inbox!
                 </h4>
-                <p className="text-xs sm:text-sm text-slate-400 font-sans mb-4">
-                  Your message has been drafted. I will respond to your email as soon as possible.
+                <p className="text-xs sm:text-sm text-slate-300 font-sans mb-2">
+                  Thank you! Your direct message has been sent to <strong className="text-gold-300">{email}</strong>.
+                </p>
+                <p className="text-xs text-slate-400 font-sans mb-5">
+                  Midun will review your inquiry and reply directly to your email address promptly.
                 </p>
                 <button
                   onClick={() => {
@@ -250,7 +299,7 @@ export const ContactSection: React.FC = () => {
                   disabled={status === 'submitting'}
                   className="w-full py-3.5 rounded-lg bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 text-heritage-950 font-serif font-bold text-xs sm:text-sm tracking-[0.16em] uppercase hover:shadow-gold-md hover:scale-[1.01] active:scale-95 transition-all flex items-center justify-center gap-2 group cursor-pointer disabled:opacity-50"
                 >
-                  <span>{status === 'submitting' ? 'PREPARING...' : 'DISPATCH MESSAGE'}</span>
+                  <span>{status === 'submitting' ? 'DISPATCHING TO MMIDUN866@GMAIL.COM...' : 'DISPATCH MESSAGE'}</span>
                   <Send size={16} className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </button>
               </form>

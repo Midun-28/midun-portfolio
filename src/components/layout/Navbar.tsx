@@ -125,6 +125,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onReplayIntro }) => {
             )}
 
             <a
+              href={personalInfo.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Midun_D_Resume.pdf"
+              className="px-4 py-1.5 rounded-full border border-gold-500/40 text-gold-300 hover:text-white hover:border-gold-400 hover:bg-gold-500/10 font-serif text-xs tracking-wider uppercase transition-all flex items-center gap-1.5"
+            >
+              <FileDown size={14} className="text-gold-400" />
+              <span>Resume</span>
+            </a>
+
+            <a
               href="#contact"
               onClick={(e) => {
                 e.preventDefault();
@@ -192,11 +203,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onReplayIntro }) => {
             <div className="mt-4 pt-4 border-t border-gold-500/20 flex flex-col gap-3">
               <a
                 href={personalInfo.resumeUrl}
-                download
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Midun_D_Resume.pdf"
                 className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg border border-gold-400/50 text-gold-300 font-serif text-xs tracking-widest uppercase hover:bg-gold-500/10 transition-colors"
               >
                 <FileDown size={16} />
-                <span>Download Resume</span>
+                <span>Resume</span>
               </a>
 
               <a

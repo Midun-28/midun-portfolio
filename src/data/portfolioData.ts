@@ -4,42 +4,35 @@ import { PersonalInfo, Project, SkillCategory, TimelineItem } from '../types/por
  * ============================================================================
  * MIDUN D - CENTRAL PORTFOLIO CONFIGURATION DATA FILE
  * ============================================================================
- * Welcome Midun! All your personal details, links, project descriptions,
- * media files, skills, and timeline entries are managed right here.
- * 
- * TO UPDATE AN IMAGE OR VIDEO:
- * 1. Place your file in the `public/media/` folder (e.g., `public/media/profile.jpg`).
- * 2. Update the corresponding path below (e.g., `profileImage: '/media/profile.jpg'`).
- * ============================================================================
  */
 
 export const personalInfo: PersonalInfo = {
   name: "MIDUN D",
   tamilName: "மிதுன் தா",
-  role: "Full Stack Developer | AI Enthusiast",
-  tagline: "Bridging timeless Tamil heritage and modern digital intelligence to craft resilient software.",
+  role: "Computer Science Engineering Student | Full Stack & AI Enthusiast",
+  tagline: "Building intuitive, high-performance web applications and intelligent digital experiences.",
   
   // Midun's transparent cutout portrait photo
   profileImage: "/media/midun_cutout.png",
   
-  // Replace with your real resume file path in public/ (e.g., '/media/Midun_D_Resume.pdf')
-  resumeUrl: "#contact",
+  // Midun's authentic resume PDF
+  resumeUrl: "/media/Midun_D_Resume.pdf",
   
-  email: "midun.developer@gmail.com",
-  location: "Tamil Nadu, India",
+  email: "mmidun866@gmail.com",
+  phone: "+91 63831 48977",
+  location: "Coimbatore, Tamil Nadu",
   
   socials: {
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
-    email: "mailto:midun.developer@gmail.com",
+    github: "https://github.com/Midun-28",
+    linkedin: "https://linkedin.com/in/midund",
+    email: "mailto:mmidun866@gmail.com",
     twitter: "https://x.com",
   },
 
   // Cinematic Intro Screen Media Configuration
   introMedia: {
-    // Drop your intro video into public/media/intro_bg.mp4 and set: videoUrl: '/media/intro_bg.mp4'
-    videoUrl: "", // If empty string, portfolio gracefully displays the iconic Porikkalam temple x cyber city template
-    fallbackPoster: "/media/porikkalam_hero.jpg", // Iconic Porikkalam 2026 heritage x cyber banner
+    videoUrl: "", 
+    fallbackPoster: "/media/porikkalam_clean_bg.jpg", 
     welcomeSubtitle: "AN ARENA FOR ENGINEERS • திறன்களின் திடல்",
     welcomeTamilGreeting: "வணக்கம் • வருகை தருக",
   },
@@ -47,40 +40,81 @@ export const personalInfo: PersonalInfo = {
   // "MY ROOTS" / என் வேர்கள் Section Configuration
   nativeRoots: {
     title: "MY ROOTS & HERITAGE",
-    tamilTitle: "என் வேர்கள் • தமிழ் மண்",
+    tamilTitle: "என் வேர்கள் • தமிழ்நாடு",
     quote: "Deep roots anchor the tree that reaches the highest sky.",
     quoteTamil: "வேர்கள் ஆழம் எனில், கிளைகள் வானம் தொடும்.",
-    locationName: "Tamil Nadu, India",
+    locationName: "Karaikudi to Coimbatore, Tamil Nadu",
     heritageText: [
-      "Hailing from the ancient cultural cradle of Tamil Nadu, my mindset as an engineer is deeply shaped by thousands of years of Dravidian architectural mastery—where grand stone temples like Thanjavur Brihadisvara and Madurai Meenakshi were engineered with millimeter precision to withstand centuries.",
-      "Just as ancient artisans chiseled stone into timeless monuments, I approach modern software engineering with discipline, aesthetic balance, and uncompromising attention to foundational architecture.",
-      "Combining deep-rooted cultural values of hard work and humility with cutting-edge AI and Full Stack technologies, my goal is to build digital products that endure and empower communities."
+      "Born and raised with roots in Karaikudi—a heritage town renowned for its magnificent Chettinad architectural discipline and enduring stone craftsmanship—and now pursuing engineering in Coimbatore, the industrial and technological powerhouse of Tamil Nadu.",
+      "Just as ancient Tamil stone architecture was engineered with millimeter precision to withstand centuries, I approach modern software engineering with foundational discipline, aesthetic clarity, and algorithmic rigor.",
+      "Blending cultural humility with modern Full Stack development and Generative AI, my goal is to build digital products that solve genuine real-world challenges for our communities."
     ],
-    // Drop your native village or cultural drone video into public/media/my_roots_bg.mp4
-    videoUrl: "", // If empty string, beautiful ambient Dravidian heritage canvas is rendered
-    fallbackImage: "/media/porikkalam_hero.jpg",
+    videoUrl: "", 
+    fallbackImage: "/media/porikkalam_clean_bg.jpg",
     galleryImages: [
-      "/media/porikkalam_hero.jpg",
+      "/media/porikkalam_clean_bg.jpg",
       "/media/porikkalam_flagship.jpg",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=800&auto=format&fit=crop"
     ]
   },
 
   bioParagraphs: [
-    "Hello! I am Midun D, a passionate Full Stack Developer and AI enthusiast dedicated to building intuitive, high-performance web applications and intelligent digital experiences.",
-    "My engineering journey is driven by a deep curiosity about how software solves tangible real-world problems. Whether designing clean responsive frontends with React & TypeScript or architecting backend services with Python, I love translating complex challenges into elegant solutions.",
-    "I actively explore Generative AI, machine learning fundamentals, and cloud databases like Supabase, striving to integrate practical intelligence into everyday tools for students, local communities, and modern enterprises."
+    "Hello! I am Midun D, a motivated Computer Science Engineering student at Dr. N.G.P Institute of Technology, Coimbatore. I specialize in Full Stack Web Development, Python, Java, and emerging Generative AI technologies.",
+    "My development journey is driven by solving practical challenges. From building an AI-powered Campus Guidance System with multilingual assistance to developing an Alumni Management System (AMS) and hyperlocal workforce solutions, I focus on building intuitive, high-performance software.",
+    "With a strong foundation in C, Python, Java with Data Structures, and cloud workflows, I constantly explore innovative solutions that combine robust backend architecture with modern interactive interfaces."
   ]
 };
 
 /**
  * ============================================================================
- * FEATURED PROJECTS
+ * FEATURED PROJECTS (Authentic from Midun's Resume & Portfolio)
  * ============================================================================
- * All 3 initial projects with detailed problem statements, tech stacks,
- * key features, and video/thumbnail configurations.
  */
 export const projectsData: Project[] = [
+  {
+    id: "ai-campus-assist",
+    title: "Ai-Campus Assist",
+    tagline: "AI-powered campus guidance system with multilingual chatbot interaction and database-backed navigation.",
+    category: "AI / ML",
+    featured: true,
+    description: "Developed an AI-powered Campus Guidance System to assist parents, visitors, and newcomers in navigating campus locations efficiently using multilingual chatbot interaction and database-based guidance.",
+    problemStatement: "Navigating university campuses, finding specific departments, and locating event venues often causes confusion for new visitors, parents, and students. A multilingual contextual AI assistant simplifies campus discovery instantly.",
+    keyFeatures: [
+      "Multilingual chatbot interaction supporting queries in regional and global languages.",
+      "Contextual database-backed campus location and department lookup.",
+      "Automated visitor FAQ assistance and administrative guidance.",
+      "Clean, modern responsive user interface with golden accents.",
+      "Fast response pipeline powered by Generative AI concepts."
+    ],
+    technologies: ["Python", "Generative AI", "React", "TypeScript", "Database", "Git & GitHub"],
+    thumbnail: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+    demoVideo: "",
+    githubUrl: "https://github.com/Midun-28",
+    liveUrl: "https://github.com/Midun-28",
+    date: "2024 - 2025"
+  },
+  {
+    id: "alumni-management-system",
+    title: "Alumni Management System (AMS)",
+    tagline: "Comprehensive networking and institutional platform connecting alumni, current students, and academia.",
+    category: "Full Stack",
+    featured: true,
+    description: "Developed an Alumni Management System (AMS) to connect alumni, students, and institutions. Implemented profile management, event updates, and communication features, significantly improving networking and information sharing.",
+    problemStatement: "Universities and colleges often lose touch with graduating batches, making mentorship, networking, and institutional alumni donations fragmented across different channels.",
+    keyFeatures: [
+      "Alumni directory with profile management and career milestone updates.",
+      "Event scheduling, reunion notifications, and campus news distribution.",
+      "Direct messaging and mentorship connect between alumni and students.",
+      "Secure role-based access for students, alumni, and administrators.",
+      "Robust relational database schema for long-term records."
+    ],
+    technologies: ["Python", "Django", "HTML5", "CSS3", "JavaScript", "SQL", "Git"],
+    thumbnail: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop",
+    demoVideo: "",
+    githubUrl: "https://github.com/Midun-28",
+    liveUrl: "https://github.com/Midun-28",
+    date: "2024"
+  },
   {
     id: "vaaga-bro",
     title: "Vaaga Bro – Hire Nearby Employees",
@@ -88,7 +122,7 @@ export const projectsData: Project[] = [
     category: "Full Stack",
     featured: true,
     description: "A localized recruitment platform designed to solve the friction of finding and hiring verified blue-collar and skilled workers in nearby localities with real-time location matching.",
-    problemStatement: "In many local neighborhoods, finding reliable daily-wage workers, electricians, plumbers, and local technicians remains informal, unorganized, and inefficient. Workers struggle to find consistent gigs, while homeowners and local businesses lack a trusted, immediate hiring channel.",
+    problemStatement: "In local neighborhoods, finding reliable daily-wage workers, electricians, plumbers, and technicians remains informal and inefficient. Workers struggle to find consistent gigs, while homeowners lack a trusted, immediate hiring channel.",
     keyFeatures: [
       "Hyperlocal radius-based matching for immediate worker discovery.",
       "Profile verification and skill-badge system to establish trust.",
@@ -98,160 +132,160 @@ export const projectsData: Project[] = [
     ],
     technologies: ["React", "TypeScript", "JavaScript", "HTML/CSS", "Supabase", "Git"],
     thumbnail: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1200&auto=format&fit=crop",
-    // To add your video preview: demoVideo: "/media/vaaga_bro_demo.mp4"
     demoVideo: "",
-    githubUrl: "https://github.com",
-    liveUrl: "https://github.com",
-    date: "2025"
-  },
-  {
-    id: "ai-campus-assistant",
-    title: "AI Campus Assistant",
-    tagline: "An intelligent multimodal assistant for college students and faculty providing instant academic intelligence.",
-    category: "AI / ML",
-    featured: true,
-    description: "An AI-powered academic companion that answers campus queries, guides students through course materials, and provides automated administrative support.",
-    problemStatement: "Navigating university resources, exam timetables, campus department contacts, and study references often involves fragmented portals and slow response times. Students need an immediate, contextual AI assistant.",
-    keyFeatures: [
-      "Context-aware FAQ and academic syllabus query engine using Generative AI.",
-      "Campus announcement summaries and event schedule assistant.",
-      "Conversational memory for seamless multi-turn student queries.",
-      "Clean dashboard interface with dark mode and golden accents.",
-      "Secure authentication and student query logging."
-    ],
-    technologies: ["Python", "Generative AI", "React", "TypeScript", "Supabase", "Git"],
-    thumbnail: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
-    demoVideo: "",
-    githubUrl: "https://github.com",
-    liveUrl: "https://github.com",
-    date: "2025"
-  },
-  {
-    id: "ai-video-editor",
-    title: "AI Video Editor – Concept & Development",
-    tagline: "Next-gen intelligent video curation suite transforming raw clips into polished cinematic stories.",
-    category: "Web Innovation",
-    featured: true,
-    description: "A forward-looking video editing workflow exploring automated clip sequencing, AI transcript analysis, and smart highlight generation for digital creators.",
-    problemStatement: "Manual video editing involves hours of repetitive trimming, caption synchronization, and audio leveling. Creators need an intelligent assistant that automates rough cuts and audio-visual alignments.",
-    keyFeatures: [
-      "AI-driven scene detection and automated transcript-based cut suggestions.",
-      "Dynamic subtitle styling with customizable animated overlays.",
-      "Timeline scrubbing interface with lightweight browser-side playback.",
-      "Audio normalization and background noise reduction concept.",
-      "Direct export presets optimized for multi-platform distribution."
-    ],
-    technologies: ["Python", "AI/ML fundamentals", "React", "TypeScript", "HTML5 Canvas"],
-    thumbnail: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1200&auto=format&fit=crop",
-    demoVideo: "",
-    githubUrl: "https://github.com",
-    liveUrl: "https://github.com",
-    date: "2025"
+    githubUrl: "https://github.com/Midun-28",
+    liveUrl: "https://github.com/Midun-28",
+    date: "2024 - 2025"
   }
 ];
 
 /**
  * ============================================================================
- * TECHNICAL SKILLS
+ * TECHNICAL SKILLS (Accurately from Midun's Resume)
  * ============================================================================
- * Categorized strictly according to what Midun has learned and worked with.
  */
 export const skillsData: SkillCategory[] = [
   {
     category: "Programming",
     tamilCategoryName: "நிரலாக்க மொழிகள்",
-    description: "Foundational and core languages for problem solving and backend systems.",
+    description: "Core languages for algorithmic problem solving and backend application development.",
     skills: [
-      { name: "Python", level: "Intermediate", experienceNote: "Data processing, AI scripts & backend logic" },
-      { name: "C", level: "Academic", experienceNote: "Data structures, memory fundamentals & algorithms" },
-      { name: "Java", level: "Intermediate", experienceNote: "Object-oriented programming & core software concepts" }
+      { name: "C Programming", level: "Proficient", experienceNote: "Data structures, memory fundamentals & problem solving" },
+      { name: "Python", level: "Proficient", experienceNote: "Automation, backend scripting & AI pipelines" },
+      { name: "Java with Data Structures", level: "Intermediate", experienceNote: "OOP concepts, collections & algorithms" }
     ]
   },
   {
     category: "Web Development",
     tamilCategoryName: "வலைத்தள உருவாக்கம்",
-    description: "Modern frontend technologies to build responsive, accessible web applications.",
+    description: "Modern frontend and full-stack technologies to build responsive web applications.",
     skills: [
-      { name: "React", level: "Intermediate", experienceNote: "Component architectures, hooks & state management" },
-      { name: "TypeScript", level: "Intermediate", experienceNote: "Type-safe codebases & reliable UI interfaces" },
-      { name: "JavaScript", level: "Proficient", experienceNote: "ES6+, async/await, DOM APIs & dynamic behaviors" },
-      { name: "HTML5", level: "Proficient", experienceNote: "Semantic markup & SEO-friendly document structure" },
-      { name: "CSS3 / Tailwind", level: "Proficient", experienceNote: "Custom layouts, responsive design & keyframe animations" }
+      { name: "HTML5 / CSS3", level: "Proficient", experienceNote: "IIT Bombay Certified, semantic layouts & responsive styling" },
+      { name: "JavaScript / TypeScript", level: "Intermediate", experienceNote: "ES6+, async flows & type-safe frontend components" },
+      { name: "React", level: "Intermediate", experienceNote: "Component architectures, interactive UIs & state management" },
+      { name: "Python / Django", level: "Certified", experienceNote: "Value Added Course Certified, backend APIs & web services" }
     ]
   },
   {
     category: "AI & Emerging Tech",
     tamilCategoryName: "செயற்கை நுண்ணறிவு",
-    description: "Practical intelligence and state-of-the-art machine learning foundations.",
+    description: "Applied generative intelligence and modern automation tools.",
     skills: [
-      { name: "Generative AI", level: "Exploring", experienceNote: "Prompt engineering, LLM integration & AI assistants" },
-      { name: "AI/ML Fundamentals", level: "Learning", experienceNote: "Model basics, data preprocessing & predictive concepts" }
+      { name: "Generative AI", level: "Exploring", experienceNote: "Multilingual campus chatbots, LLM prompting & assistant workflows" },
+      { name: "Automation & AI Applications", level: "Active", experienceNote: "Workflow automation, video generation & scripting" }
     ]
   },
   {
-    category: "Tools & Infrastructure",
-    tamilCategoryName: "கருவிகள் & தரவுத்தளம்",
-    description: "Modern workflow tooling, version control, and cloud database solutions.",
+    category: "Tools & Personal Skills",
+    tamilCategoryName: "கருவிகள் & திறன்கள்",
+    description: "Version control tooling and professional collaborative attributes.",
     skills: [
-      { name: "Git", level: "Proficient", experienceNote: "Branching, staging, merge workflows & commit discipline" },
-      { name: "GitHub", level: "Proficient", experienceNote: "Repository management, collaboration & CI/CD basics" },
-      { name: "Supabase", level: "Intermediate", experienceNote: "PostgreSQL, Auth integration & real-time listeners" }
+      { name: "Git & GitHub", level: "Proficient", experienceNote: "Version control discipline, repository management & teamwork" },
+      { name: "Leadership & Adaptability", level: "Core", experienceNote: "MSME Hackathon competitor, event organizing & team collaboration" },
+      { name: "Problem Solving", level: "Core", experienceNote: "Critical thinking, algorithmic analysis & continuous learning" }
     ]
   }
 ];
 
 /**
  * ============================================================================
- * TIMELINE / EXPERIENCE / ACHIEVEMENTS / EDUCATION
+ * TIMELINE / EXPERIENCE / ACHIEVEMENTS / EDUCATION (Exact from Midun's Resume)
  * ============================================================================
- * Easily editable cards for placements, hackathons, and certifications.
  */
 export const timelineData: TimelineItem[] = [
   {
-    id: "edu-1",
-    title: "Bachelor of Engineering (B.E.)",
-    organization: "Engineering College, Tamil Nadu",
-    period: "2022 - Present",
+    id: "edu-be",
+    title: "B.E. Computer Science Engineering",
+    organization: "Dr. N.G.P Institute of Technology, Coimbatore",
+    period: "2023 – 2028",
+    location: "Coimbatore",
     category: "education",
-    highlight: "Computer Science / Engineering Track",
+    highlight: "CGPA: 7.7",
     description: [
-      "Focusing on core computer science subjects, algorithmic problem solving, and software engineering principles.",
-      "Actively developing hands-on full stack applications and participating in technical symposiums."
+      "Pursuing Bachelor of Engineering in Computer Science with a strong academic standing (CGPA: 7.7).",
+      "Actively developing full-stack web applications, AI chatbots, and participating in national hackathons."
     ]
   },
   {
-    id: "proj-achievement-1",
-    title: "Lead Developer – Vaaga Bro Platform",
-    organization: "Independent Product Initiative",
-    period: "2024 - 2025",
-    category: "achievement",
-    highlight: "Hyperlocal Innovation",
-    description: [
-      "Engineered the full frontend prototype and database schema for a neighborhood hiring solution.",
-      "Implemented responsive UI components with React and Supabase backend services."
-    ]
-  },
-  {
-    id: "workshop-1",
-    title: "Generative AI & Modern Web Development Workshops",
-    organization: "Technical Symposiums & Developer Meetups",
+    id: "intern-livestream",
+    title: "Internship Trainee – Java Full Stack",
+    organization: "Live Stream Technologies",
     period: "2024",
-    category: "workshop",
-    highlight: "Hands-on Training",
+    location: "Coimbatore",
+    category: "experience",
+    highlight: "Java Full Stack",
     description: [
-      "Participated in deep-dive technical workshops exploring API-driven AI integration and React performance patterns.",
-      "Built prototype chat interfaces and smart utility apps."
+      "Completed internship training in Java Full Stack development.",
+      "Developed practical skills in Java, backend logic, and full-stack web application development workflows."
     ]
   },
   {
-    id: "cert-1",
-    title: "Full Stack Web & Database Foundations",
-    organization: "Verified Learning & Coursework",
+    id: "achievement-msme",
+    title: "Top 40 Teams – MSME Hackathon 2025",
+    organization: "MSME Hackathon 2025",
+    period: "2025",
+    category: "achievement",
+    highlight: "Top 40 Finalist",
+    description: [
+      "Recognized among the Top 40 teams in the national MSME Hackathon 2025.",
+      "Showcased innovative engineering and problem-solving capabilities under competitive evaluation."
+    ]
+  },
+  {
+    id: "cert-nptel",
+    title: "NPTEL Cloud Computing – Elite Silver",
+    organization: "NPTEL (IIT/IISc)",
     period: "2024",
     category: "certification",
-    highlight: "Certified Skillset",
+    highlight: "Elite Silver Badge",
     description: [
-      "Completed rigorous coursework covering modern JavaScript, React ecosystem, and relational database management."
+      "Successfully certified in Cloud Computing with an Elite Silver distinction.",
+      "Gained deep foundational knowledge in virtualization, cloud infrastructure, and distributed storage."
+    ]
+  },
+  {
+    id: "cert-django",
+    title: "Full Stack with Python & Django Certification",
+    organization: "Value Added Course – Dr. N.G.P.iTech",
+    period: "2024",
+    category: "certification",
+    highlight: "Certified Full Stack",
+    description: [
+      "Completed intensive hands-on coursework in Python, Django MVC architecture, and backend integration."
+    ]
+  },
+  {
+    id: "cert-html",
+    title: "HTML Training Certification",
+    organization: "IIT Bombay Spoken Tutorial",
+    period: "2024",
+    category: "certification",
+    highlight: "IIT Bombay",
+    description: [
+      "Demonstrated proficiency in semantic HTML, modern web standards, and document structuring."
+    ]
+  },
+  {
+    id: "achievement-marathon",
+    title: "KMCH Kovai Marathon – Finisher",
+    organization: "KMCH, Coimbatore",
+    period: "2024",
+    category: "achievement",
+    highlight: "Marathon Finisher",
+    description: [
+      "Completed the Kovai Marathon promoting health and road safety awareness."
+    ]
+  },
+  {
+    id: "edu-hsc",
+    title: "Higher Secondary Certificate (HSC) & SSLC",
+    organization: "Alagappa Matriculation Higher Secondary School, Karaikudi",
+    period: "2020 – 2024",
+    location: "Karaikudi",
+    category: "education",
+    highlight: "HSC: 76.8% | SSLC: 69.2%",
+    description: [
+      "Completed Higher Secondary Certificate with 76.8% (2024) and SSLC with 69.2% (2022)."
     ]
   }
 ];

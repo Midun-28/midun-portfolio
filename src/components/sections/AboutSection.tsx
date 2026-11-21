@@ -13,13 +13,13 @@ export const AboutSection: React.FC = () => {
       icon: <GraduationCap size={22} className="text-gold-400" />,
       title: "Foundational Education",
       tamil: "கல்வி அடித்தளம்",
-      description: "Pursuing an engineering degree in Tamil Nadu, establishing a rigorous grounding in computer science algorithms, systems design, and problem decomposition."
+      description: "Pursuing B.E. Computer Science Engineering at Dr. N.G.P Institute of Technology, Coimbatore (CGPA: 7.7), establishing a rigorous grounding in algorithms, systems design, and software engineering."
     },
     {
       icon: <Compass size={22} className="text-gold-400" />,
       title: "Development Journey",
       tamil: "மென்பொருள் பயணம்",
-      description: "Started with foundational C and Java, then mastered modern full-stack engineering with React, TypeScript, and Python. Driven by building working software for real users."
+      description: "Trained in Java Full Stack at Live Stream Technologies, certified in Python, Django, and Cloud Computing. Selected in the Top 40 teams at MSME Hackathon 2025."
     },
     {
       icon: <BrainCircuit size={22} className="text-gold-400" />,

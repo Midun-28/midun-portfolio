@@ -162,11 +162,13 @@ export const HeroSection: React.FC = () => {
 
             <a
               href={resumeUrl}
-              download
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Midun_D_Resume.pdf"
               className="px-7 py-3.5 rounded-full bg-heritage-900/90 border border-gold-400/60 text-gold-200 font-serif font-semibold text-xs sm:text-sm tracking-[0.18em] uppercase hover:bg-gold-500/15 hover:border-gold-300 hover:shadow-gold-sm active:scale-95 transition-all flex items-center gap-2 backdrop-blur-sm"
             >
               <FileDown size={17} className="text-gold-400" />
-              <span>DOWNLOAD RESUME</span>
+              <span>RESUME</span>
             </a>
 
             <a
