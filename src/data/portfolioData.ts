@@ -116,8 +116,8 @@ export const projectsData: Project[] = [
     date: "2024"
   },
   {
-    id: "vaaga-bro",
-    title: "Vaaga Bro – Hire Nearby Employees",
+    id: "vaanga-bro",
+    title: "Vaanga Bro – Hire Nearby Employees",
     tagline: "Hyperlocal workforce hiring platform connecting everyday skilled workers with immediate neighborhood opportunities.",
     category: "Full Stack",
     featured: true,

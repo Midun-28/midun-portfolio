@@ -34,7 +34,7 @@ This developer portfolio departs from generic SaaS dashboard templates to forge 
      - **AI & Emerging Tech**: Generative AI, AI/ML fundamentals
      - **Tools**: Git, GitHub, Supabase
 6. **Featured Projects Showcase & Modal Deep-Dive**:
-   - **Vaaga Bro – Hire Nearby Employees**
+   - **Vaanga Bro – Hire Nearby Employees**
    - **AI Campus Assistant**
    - **AI Video Editor – Concept / Development**
    - Each project supports custom thumbnails, on-demand video demonstrations, problem statements, architectural feature breakdowns, tech badges, and GitHub / demo links.
