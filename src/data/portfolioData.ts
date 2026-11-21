@@ -52,9 +52,9 @@ export const personalInfo: PersonalInfo = {
     videoUrl: "", 
     fallbackImage: "/media/porikkalam_clean_bg.jpg",
     galleryImages: [
-      "/media/porikkalam_clean_bg.jpg",
-      "/media/porikkalam_flagship.jpg",
-      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=800&auto=format&fit=crop"
+      "/media/roots_chettinad_palace.jpg",
+      "/media/roots_jallikattu.jpg",
+      "/media/roots_vazhaielai_feast.jpg"
     ]
   },
 

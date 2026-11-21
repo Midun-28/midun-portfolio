@@ -8,6 +8,12 @@ import { Landmark, MapPin, Feather, Sparkles } from 'lucide-react';
 export const MyRootsSection: React.FC = () => {
   const { nativeRoots } = personalInfo;
 
+  const culturalCaptions = [
+    { title: "Chettinad Heritage Mansion (Karaikudi)", tamil: "காரைக்குடி செட்டிநாடு மாளிகை" },
+    { title: "Veera Vilaiyattu – Jallikattu Heritage", tamil: "ஜல்லிக்கட்டு • தமிழ் வீர விளையாட்டு" },
+    { title: "Traditional Vazhaielai Virundhu", tamil: "பாரம்பரிய வாழை இலை விருந்து" },
+  ];
+
   return (
     <section id="roots" className="relative py-28 bg-heritage-950 overflow-hidden border-t border-gold-500/10">
       
@@ -112,19 +118,26 @@ export const MyRootsSection: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: gIdx * 0.15 }}
-                className="relative rounded-xl overflow-hidden border border-gold-500/30 group h-44 sm:h-48 shadow-lg"
+                className="relative rounded-xl overflow-hidden border border-gold-500/30 group h-44 sm:h-52 shadow-lg hover:border-gold-400/60 transition-colors"
               >
                 <img
                   src={imgUrl}
-                  alt={`Cultural impression ${gIdx + 1}`}
-                  className="w-full h-full object-cover filter brightness-75 contrast-110 group-hover:scale-105 transition-transform duration-700"
+                  alt={culturalCaptions[gIdx]?.title || `Cultural impression ${gIdx + 1}`}
+                  className="w-full h-full object-cover filter brightness-90 contrast-105 group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-heritage-950 via-heritage-950/30 to-transparent" />
-                <div className="absolute bottom-3 left-4 flex items-center gap-2">
-                  <Sparkles size={14} className="text-gold-400" />
-                  <span className="text-xs font-serif text-gold-200 tracking-wider">
-                    {gIdx === 0 ? "Sacred Temple Gopurams" : gIdx === 1 ? "Timeless Stone Sculptures" : "Fertile Landscapes of Tamil Nadu"}
-                  </span>
+                <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Sparkles size={14} className="text-gold-400 shrink-0" />
+                    <div>
+                      <p className="text-xs font-serif text-gold-200 tracking-wider font-semibold">
+                        {culturalCaptions[gIdx]?.title || "Cultural Heritage"}
+                      </p>
+                      <p className="font-tamil text-[11px] text-gold-antique">
+                        {culturalCaptions[gIdx]?.tamil}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))}
