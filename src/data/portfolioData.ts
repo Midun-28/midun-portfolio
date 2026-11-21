@@ -207,6 +207,18 @@ export const timelineData: TimelineItem[] = [
     ]
   },
   {
+    id: "edu-hsc",
+    title: "Higher Secondary Certificate (HSC) & SSLC",
+    organization: "Alagappa Matriculation Higher Secondary School, Karaikudi",
+    period: "2020 – 2024",
+    location: "Karaikudi",
+    category: "education",
+    highlight: "HSC: 76.8% | SSLC: 69.2%",
+    description: [
+      "Completed Higher Secondary Certificate with 76.8% (2024) and SSLC with 69.2% (2022)."
+    ]
+  },
+  {
     id: "intern-livestream",
     title: "Internship Trainee – Java Full Stack",
     organization: "Live Stream Technologies",
@@ -274,18 +286,6 @@ export const timelineData: TimelineItem[] = [
     highlight: "Marathon Finisher",
     description: [
       "Completed the Kovai Marathon promoting health and road safety awareness."
-    ]
-  },
-  {
-    id: "edu-hsc",
-    title: "Higher Secondary Certificate (HSC) & SSLC",
-    organization: "Alagappa Matriculation Higher Secondary School, Karaikudi",
-    period: "2020 – 2024",
-    location: "Karaikudi",
-    category: "education",
-    highlight: "HSC: 76.8% | SSLC: 69.2%",
-    description: [
-      "Completed Higher Secondary Certificate with 76.8% (2024) and SSLC with 69.2% (2022)."
     ]
   }
 ];
