@@ -197,7 +197,7 @@ export const timelineData: TimelineItem[] = [
     id: "edu-be",
     title: "B.E. Computer Science Engineering",
     organization: "Dr. N.G.P Institute of Technology, Coimbatore",
-    period: "2023 – 2028",
+    period: "2024 – 2028",
     location: "Coimbatore",
     category: "education",
     highlight: "CGPA: 7.7",
