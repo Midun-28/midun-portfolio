@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { personalInfo } from '../../data/portfolioData';
 import { GoldenParticlesCanvas } from './GoldenParticlesCanvas';
 import { TempleArchOrnament } from './TempleArchOrnament';
-import { Sparkles, ArrowRight, EyeOff } from 'lucide-react';
+import { Sparkles, ArrowRight } from 'lucide-react';
 
 interface CinematicIntroProps {
   onEnter: () => void;
@@ -65,15 +65,7 @@ export const CinematicIntro: React.FC<CinematicIntroProps> = ({ onEnter }) => {
         {/* Ambient Top Light Beam */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-gradient-to-b from-gold-400/15 via-gold-600/5 to-transparent blur-3xl pointer-events-none" />
 
-        {/* Skip Intro Button in Top-Right */}
-        <button
-          onClick={onEnter}
-          className="absolute top-6 right-6 z-30 flex items-center gap-2 px-4 py-2 rounded-full bg-heritage-900/70 border border-gold-500/30 text-gold-300/80 hover:text-gold-200 hover:border-gold-400 text-xs tracking-widest uppercase transition-all backdrop-blur-md group"
-          title="Skip straight to portfolio"
-        >
-          <EyeOff size={14} className="group-hover:scale-110 transition-transform" />
-          <span>Skip Intro</span>
-        </button>
+
 
         {/* Central Gateway Content */}
         <div className="relative z-20 max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
